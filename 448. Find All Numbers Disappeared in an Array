@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+      unordered_set<int> s;
+       vector<int> ans;
+       for (auto i: nums){
+         s.insert(i);
+       }
+       for (int i = 1; i <= nums.size(); i++){
+         if(s.find(i) == s.end()){
+           ans.push_back(i);
+         }
+       }
+       return ans;
+    }
+};
+// here what I am doing is first inserting every element of the vector into the set then I am implementing a loop 
+from i = 1 to i < nums.size and we are seeing if i is present in the set or not , so if i is not present in the set
+then we r i into the ans vector and returning the answer vector.
